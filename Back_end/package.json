@@ -1,0 +1,37 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon App.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/masrialemu/my_website_back_end.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masrialemu/my_website_back_end/issues"
+  },
+  "homepage": "https://github.com/masrialemu/my_website_back_end#readme",
+  "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "@emailjs/nodejs": "^2.2.0",
+    "axios": "^1.6.0",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cloudinary": "^1.41.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "emailjs": "^4.0.3",
+    "express": "^4.18.2",
+    "imgur": "^2.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.6.3",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.7",
+    "nodemon": "^3.0.1"
+  }
+}
