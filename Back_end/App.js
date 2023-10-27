@@ -40,6 +40,6 @@ app.use('/post',Post)
 app.use('/get',Get)
 app.use("/mail",Mail)
 
-app.listen(5000,(req,res)=>{
+app.listen(port,(req,res)=>{
     console.log(`The port is working now ${port}`)
 })
