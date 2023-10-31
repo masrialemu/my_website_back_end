@@ -7,7 +7,7 @@ require('dotenv/config')
 
 const secretKey = process.env.Jwt;
 // Login route
-router.post('/', async (req, res) => {
+router.post('/',async (req, res) => {
   const { username, password } = req.body;
 
   try {
@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
     };
 
     // Create a JWT token with the payload
-    const token = jwt.sign(payload, secretKey, { expiresIn: '1h' });
+    const token = jwt.sign(payload, secretKey, { expiresIn: '24h' });
 
     res.status(200).json({ message: 'Login successful', token, userId: user._id, isAdmin: user.admin });
   } catch (error) {

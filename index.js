@@ -3,8 +3,9 @@ const mongo = require('mongoose')
 const app = express()
 app.use(express.json())
 const cors = require('cors');
-app.use(cors());
-
+app.use(cors({
+    credentials: true, // Enable cookies and authentication headers
+  }));
 require('dotenv/config')
 
 const Portfolio = require('./Router/PostPortfolio')
@@ -21,6 +22,11 @@ const PostInfo=require('./Info/PostInfo')
 const GetInfo=require('./Info/GetInfo')
 const DeleteInfo=require('./Info/DeleteInfo')
 const DeletePortfolio=require('./Router/DeletePortfolio')
+const Detail=require('./Router/GetDetail')
+const GetContent=require('./Content/GetContent')
+const EditContent=require('./Content/EditContent')
+const PostContent=require('./Content/PostContent')
+const DeleteContent=require('./Content/DeleteContent')
 mongo.connect(process.env.Pass,{useNewUrlParser:true}).then(console.log('db is conncted'))
 const port = process.env.PORT || 5001; // Use environment variable or port 5001
 
@@ -37,9 +43,14 @@ app.use('/delete',DeletePortfolio)
 app.use('/post',Portfolio)
 app.use('/get',getPortfolio)
 app.use('/post',Post)
+app.use('/get',GetContent)
+app.use('/edit',EditContent)
+app.use("/post",PostContent)
+app.use("/delete",DeleteContent)
 app.use('/get',Get)
+app.use('/get',Detail)
 app.use("/mail",Mail)
 
-app.listen(port,(req,res)=>{
+app.listen(5000,(req,res)=>{
     console.log(`The port is working now ${port}`)
 })

@@ -1,4 +1,3 @@
-// Import necessary modules
 const express = require('express');
 const App = express.Router();
 const data = require('./../Database/Port');
@@ -12,12 +11,6 @@ App.get('/project', async (req, res) => {
     console.error(error);
     res.status(500).json({ error: 'Server error.' });
   }
-});
-
-// Error handling middleware
-App.use((err, req, res, next) => {
-  console.error(err);
-  res.status(500).json({ error: 'Server error.' });
 });
 
 module.exports = App;
