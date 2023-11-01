@@ -53,6 +53,6 @@ app.use('/get',Detail)
 app.use('/related',Related)
 app.use("/mail",Mail)
 
-app.listen(5000,(req,res)=>{
-    console.log(`The port is working now ${port}`)
+app.listen(port,(req,res)=>{
+    console.log(`The port is working now `)
 })
