@@ -1,12 +1,12 @@
 const mongo = require('mongoose')
 const Port = new mongo.Schema({
-    public_id:{type:Number,default: 1 ,unique: true},
-    c1:{type:String,unique: true, required: true},
-    c2:{type:String ,unique: true, required: true},
-    c3:{type:String ,unique: true, required: true},
-    c4:{type:String ,unique: true, required: true},
-    cv:{type:String ,unique: true, required: true},
-    desc:{type:String,unique: true, required: true},
+    public_id:{type:Number,default: 1},
+    c1:{type:String},
+    c2:{type:String},
+    c3:{type:String},
+    c4:{type:String},
+    cv:{type:String},
+    desc:{type:String},
     image:{type:String}
 },{timestamps:true})
 
