@@ -27,6 +27,7 @@ const GetContent=require('./Content/GetContent')
 const EditContent=require('./Content/EditContent')
 const PostContent=require('./Content/PostContent')
 const DeleteContent=require('./Content/DeleteContent')
+const Related=require('./Router/Related')
 mongo.connect(process.env.Pass,{useNewUrlParser:true}).then(console.log('db is conncted'))
 const port = process.env.PORT || 5001; // Use environment variable or port 5001
 
@@ -49,6 +50,7 @@ app.use("/post",PostContent)
 app.use("/delete",DeleteContent)
 app.use('/get',Get)
 app.use('/get',Detail)
+app.use('/related',Related)
 app.use("/mail",Mail)
 
 app.listen(5000,(req,res)=>{
