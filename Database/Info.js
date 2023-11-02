@@ -1,7 +1,11 @@
-const mongo = require('mongoose')
-const Port = new mongo.Schema({
-    name:{type:String,unique: true},
-    value:{type:String},
-},{timestamps:true})
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-module.exports= new mongo.model('info',Port)
+const infoSchema = new Schema({
+  name: { type: String, required: true, unique: true },
+  value: { type: String,required: true },
+}, { timestamps: true });
+
+const Info = mongoose.model('info', infoSchema);
+
+module.exports = Info;
